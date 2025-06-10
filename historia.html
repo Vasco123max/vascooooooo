@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasco da Gama - História</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-titulo">
+            <img src="vasco.png" alt="Escudo do Vasco" class="logo-img">
+            <h1>Vasco da Gama</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="home.html">Sobre</a></li>
+                <li><a href="historia.html">História</a></li>
+                <li><a href="titulos.html">Títulos</a></li>
+                <li><a href="jogadores.html">Jogadores</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+ <section>
+    <h2>História do Vasco da Gama</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">1898</div>
+            <div class="timeline-content">
+                <h3>Fundação do Clube</h3>
+                <p>O Club de Regatas Vasco da Gama foi fundado em 21 de agosto de 1898, por um grupo de 63 rapazes, imigrantes portugueses e luso-descendentes, reunidos no bairro da Saúde.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">1915-1916</div>
+            <div class="timeline-content">
+                <h3>Criação do Departamento de Futebol</h3>
+                <p>O Vasco criou seu departamento de futebol em 1915. O primeiro jogo oficial ocorreu em 3 de maio de 1916, com vitória por 2 a 0 contra o Paladino.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">1923</div>
+            <div class="timeline-content">
+                <h3>Campeonato Carioca</h3>
+                <p>O Vasco conquistou seu primeiro Campeonato Carioca com um time formado por negros e operários — uma revolução social no esporte da época.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">1927</div>
+            <div class="timeline-content">
+                <h3>Estádio São Januário</h3>
+                <p>O clube inaugurou São Januário, o maior estádio do Brasil na época, construído em apenas 10 meses com apoio da torcida.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">1940s</div>
+            <div class="timeline-content">
+                <h3>Expresso da Vitória</h3>
+                <p>Time lendário da década de 40, o Expresso da Vitória encantou com seu futebol e grandes conquistas nacionais.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">1997-2000</div>
+            <div class="timeline-content">
+                <h3>Conquistas Modernas</h3>
+                <p>O Vasco conquistou a Libertadores em 1998 e os Brasileiros de 1997 e 2000, reafirmando sua grandeza no futebol.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <iframe width="560" height="315" src="vasco.mp4" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Club de Regatas Vasco da Gama. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+    // Anima os itens da timeline ao rolar a página
+    const items = document.querySelectorAll('.timeline-item');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    items.forEach(item => {
+        observer.observe(item);
+    });
+</script>
+
+</body>
+</html>
