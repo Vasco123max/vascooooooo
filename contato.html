@@ -31,7 +31,7 @@
             <p>Entre em contato com o Club de Regatas Vasco da Gama através do formulário abaixo ou pelos nossos canais oficiais.</p>
             
             <div class="form-contato">
-                <form action="#" method="POST">
+                <form id="form-contato">
                     <div class="form-group">
                         <label for="nome">Nome:</label>
                         <input type="text" id="nome" name="nome" required>
@@ -61,11 +61,15 @@
                     
                     <button type="submit" class="btn">Enviar Mensagem</button>
                 </form>
+                <!-- Mensagem de sucesso -->
+                <div id="mensagem-sucesso" class="mensagem-sucesso" style="display: none;">
+                    ✅ Mensagem enviada com sucesso!
+                </div>
             </div>
             
             <h3>Outros Canais de Contato</h3>
             <p><strong>Endereço:</strong> Rua Gal Almério de Moura, 131 - Vasco da Gama, Rio de Janeiro - RJ, CEP 20921-060</p>
-            <p><strong>Telefone:</strong> (21) 2580-7171</p>
+            <p><strong>Telefone:</strong> +55 (63) 99290-2397</p>
             <p><strong>E-mail:</strong> contato@vasco.com.br</p>
             <p><strong>Redes Sociais:</strong> @vascodagama (Instagram, Twitter, Facebook)</p>
         </section>
@@ -75,6 +79,5 @@
         <p>&copy; 2023 Club de Regatas Vasco da Gama. Todos os direitos reservados.</p>
     </footer>
     <script src="form-validation.js"></script>
-
 </body>
 </html>

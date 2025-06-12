@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
-  
+
   form.addEventListener("submit", function(event) {
     // Limpar erros anteriores
     removeErrors();
@@ -14,21 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
       valid = false;
     }
 
-    // Validação do Email (email válido)
+    // Validação do Email
     const email = form.email.value.trim();
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       showError(form.email, "Por favor, insira um e-mail válido.");
       valid = false;
     }
 
-    // Validação do Assunto (selecionado)
+    // Validação do Assunto
     const assunto = form.assunto.value;
     if (!assunto) {
       showError(form.assunto, "Por favor, selecione um assunto.");
       valid = false;
     }
 
-    // Validação da Mensagem (mínimo 10 caracteres)
+    // Validação da Mensagem
     const mensagem = form.mensagem.value.trim();
     if (!mensagem || mensagem.length < 10) {
       showError(form.mensagem, "A mensagem deve ter no mínimo 10 caracteres.");
@@ -37,28 +37,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!valid) {
       event.preventDefault();
+      return;
     }
+
+    // ✅ SE FOR VÁLIDO, IMPEDE O ENVIO PADRÃO E MOSTRA A MENSAGEM
+    event.preventDefault(); // evita recarregar a página
+
+    alert("Mensagem enviada com sucesso!");
+
+    // ✅ REDIRECIONAMENTO APÓS 1.5 SEGUNDOS
+    setTimeout(() => {
+      window.location.href = "home.html";
+    }, 1500);
   });
 
-  // Função para mostrar erro abaixo do campo
-  function showError(element, message) {
-    const error = document.createElement("div");
-    error.className = "form-error";
-    error.style.color = "var(--vermelho)";
-    error.style.marginTop = "0.3rem";
-    error.style.fontSize = "0.9rem";
-    error.textContent = message;
-    element.parentElement.appendChild(error);
-    element.style.borderColor = "var(--vermelho)";
-  }
 
-  // Remove erros antigos antes de nova validação
-  function removeErrors() {
-    const errors = document.querySelectorAll(".form-error");
-    errors.forEach(err => err.remove());
+if (!valid) {
+  event.preventDefault();
+  return;
+}
 
-    // Resetar bordas
-    const inputs = form.querySelectorAll("input, select, textarea");
-    inputs.forEach(input => input.style.borderColor = "var(--cinza-medio)");
-  }
-});
+// Impede envio e mostra mensagem
+event.preventDefault();
+
+// Mostra a mensagem de sucesso
+const msg = document.getElementById("mensagem-sucesso");
+msg.style.display = "block";
+
+// Redireciona após 2 segundos
+setTimeout(() => {
+  window.location.href = "home.html";
+}, 2000);
